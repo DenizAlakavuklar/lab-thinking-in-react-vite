@@ -7,18 +7,28 @@ import React from 'react'
 
 function ProductsPage() {
     const [products, setProducts] = useState(jsonData);
+    const [filteredProducts, setFilteredProducts] = useState("");
+ 
+    
+    const findProducts = (name) => {
+        const listFiltered = products.filter(item => item.name.includes(name))
+        setFilteredProducts(listFiltered)
+          }
 
     return (
-        <div>
+        <div >
             <h1>IronStore</h1>
-            <SearchBar />
+             <SearchBar
+              findProducts={findProducts}
+               />
+            
 
-            {products.map((prd) => {
-        return (
-            <ProductsTable data={prd} />
-         )
-      }
-            )} 
+         {products.map((prd) => {
+                return (
+                    <ProductsTable products={prd} />
+                )
+            }
+        )}
 
         </div>
     )

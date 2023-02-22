@@ -1,12 +1,19 @@
 import React from 'react'
-function SearchBar () {
 
-  
+function SearchBar ({findProducts}) {
+     
+   
+  const handleSearch = (event) => {
+    findProducts(event.target.value)
+  }
+
+
     return(
         <div>
-           <form>
-                  <input  type="text" placeholder="search..."/>
-                  </form>
+            <label>Search</label>
+      <input type="text" onChange={handleSearch} />
+  
+
         </div>    
     )
   }

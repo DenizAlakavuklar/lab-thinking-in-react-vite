@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ProductsTable ({data}) {
+function ProductsTable ({products}) {
    
   
   return(
@@ -14,8 +14,8 @@ function ProductsTable ({data}) {
 </thead>
 <tbody>
 <tr>
-            <td>{data.name}</td>
-            <td>{data.price}</td>
+            <td>{products.name}</td>
+            <td>{products.price}</td>
         </tr>
 </tbody>
      </table>
